@@ -9,9 +9,9 @@
   <body>
     <div id="tasho-app">
       <h1>Welcome To Vue.Js Course</h1>
-      <p v-if="age > 50">You are too old {{ name }}</p>
-      <p v-else-if="age > 15 && age < 40">You are not too old</p>
-      <p v-else>You are still young</p>
+      <p v-once>Welcome {{name}}</p>
+      <p v-show="name">Name: {{name}}</p>
+      <p v-if="age">Age: {{age}}</p>
     </div>
     <script src="js/vue.js"></script>
     <script>
