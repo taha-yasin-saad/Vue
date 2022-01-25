@@ -9,14 +9,17 @@
   <body>
     <div id="tasho-app">
       <h1>Welcome To Vue.Js Course</h1>
-      <p>Welcome {{ 'Mr ' + name }} We Are Happy To See You.</p>
-      <p>Your Age Is : {{ age + ' Years' }}</p>
-      <p>Your First Skills Is : {{ skills[0] }}</p>
-      <p>You Are {{ isSubscribed ? 'Subscribed': 'Unsubscribed' }}</p>
-      <p>Your First Test Name Is : {{ completedTests[0].testName }}</p>
-      <p>{{date}}</p>
-      <p>{{yourAgeInDays()}}</p>
-      <button @click="showNewDate()">Show New Date</button>
+      <ul>
+        <li v-for="skill in skills">{{skill}}</li>
+      </ul>
+      <ul>
+        <li v-for="(skill, index) in skills">{{index}} => {{skill}}</li>
+      </ul>
+      <ul>
+        <li v-for="(test, index) in completedTests">
+          {{ index }} => {{test.testName}} | {{test.testResult}}
+        </li>
+      </ul>
     </div>
     <script src="js/vue.js"></script>
     <script>
