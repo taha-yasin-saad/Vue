@@ -9,11 +9,9 @@
   <body>
     <div id="tasho-app">
       <h1>Welcome To Vue.Js Course</h1>
-      <p>Welcome {{ name }}</p>
-      <!-- v-bind: for short we can use : -->
-      <a v-bind:href="imageUrl">
-        <img :src="imageSrc" :alt="imageAltText" />
-      </a>
+      <p>Counter is {{counter}}</p>
+      <!-- v-on: for short use @ -->
+      <button @click="counter++">Increase Counter</button>
     </div>
     <script src="js/vue.js"></script>
     <script>
@@ -21,9 +19,7 @@
         el: "#tasho-app",
         data: {
           name: "Tasho",
-          imageSrc: "imgs/1.jpg",
-          imageAltText: "It's An anime Picture",
-          imageUrl: "http://www.google.com",
+          counter: 0,
         },
       });
     </script>
