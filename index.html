@@ -9,9 +9,10 @@
   <body>
     <div id="tasho-app">
       <h1>Welcome To Vue.Js Course</h1>
-      <p v-once>Welcome {{name}}</p>
-      <p v-show="name">Name: {{name}}</p>
-      <p v-if="age">Age: {{age}}</p>
+      <p>Welcome {{ name }}</p>
+      <a v-bind:href="imageUrl">
+        <img :src="imageSrc" :alt="imageAltText" />
+      </a>
     </div>
     <script src="js/vue.js"></script>
     <script>
@@ -19,7 +20,9 @@
         el: "#tasho-app",
         data: {
           name: "Tasho",
-          age: 36,
+          imageSrc: "imgs/1.jpg",
+          imageAltText: "It's An anime Picture",
+          imageUrl: "http://www.google.com",
         },
       });
     </script>
