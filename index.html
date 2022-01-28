@@ -9,15 +9,24 @@
   <body>
     <div id="tasho-app">
       <h1>Welcome To Vue.Js Course</h1>
-      <form class="" action="" method="post">
-        <input type="text" :value="source" placeholder="Using v-bind" />
-        <input type="text" v-model="source" placeholder="Using v-model"/>
-      </form>
-      Your Name Is {{ source }}
+      <app-count></app-count>
+      <app-count></app-count>
+      <app-count></app-count>
+      <app-count></app-count>
     </div>
     <script src="js/vue.js"></script>
     <script>
-      new Vue({
+      Vue.component("app-count", {
+        data: function () {
+          return {
+            name: "Ahmed",
+            count: 0,
+          };
+        },
+        template:
+          '<p @click="count++">Hello {{ name }} You clicked this paragraph {{ count }} Times</p>',
+      });
+      var vm = new Vue({
         el: "#tasho-app",
         data: {
           source: "Tasho",
