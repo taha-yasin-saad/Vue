@@ -9,17 +9,18 @@
   <body>
     <div id="tasho-app">
       <h1>Welcome To Vue.Js Course</h1>
-      <p>Counter is {{counter}}</p>
-      <!-- v-on: for short use @ -->
-      <button @click="counter++">Increase Counter</button>
+      <form class="" action="" method="post">
+        <input type="text" :value="source" placeholder="Using v-bind" />
+        <input type="text" v-model="source" placeholder="Using v-model"/>
+      </form>
+      Your Name Is {{ source }}
     </div>
     <script src="js/vue.js"></script>
     <script>
       new Vue({
         el: "#tasho-app",
         data: {
-          name: "Tasho",
-          counter: 0,
+          source: "Tasho",
         },
       });
     </script>
