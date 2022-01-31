@@ -9,16 +9,15 @@
   <body>
     <div id="tasho-app">
       <h1>Welcome To Vue.Js Course</h1>
-      <app-article
-        v-for="post in posts"
-        :id="post.id"
-        :title="post.title"
-        :author="post.author"
-      ></app-article>
+      <app-article></app-article>
+      <app-article-item></app-article-item>
     </div>
     <script src="js/vue.js"></script>
     <script>
-      Vue.component("app-article", {
+
+      // Global components
+      // component can be in cabab-case or PascalCase
+      Vue.component("AppArticle", {
         data: function () {
           return {
             count: 0,
@@ -26,22 +25,23 @@
         },
         props: ["author", "title", "id"],
 
-        template:
-          "<p># {{ id }} Article Title Is {{ title }} and Written By {{ author }}</p>",
+        template: "<p>Test</p>",
+      });
+
+      Vue.component("AppArticleItem", {
+        data: function () {
+          return {
+            count: 0,
+          };
+        },
+        props: ["author", "title", "id"],
+
+        template: "<p>Item</p>",
       });
 
       var vm = new Vue({
         el: "#tasho-app",
-        data: {
-          posts: [
-            { id: 1, author: "Osama", title: "Article Number One" },
-            { id: 2, author: "Ahmed", title: "Article Number Two" },
-            { id: 3, author: "Sayed", title: "Article Number Three" },
-            { id: 4, author: "Taha", title: "Article Number Four" },
-            { id: 5, author: "Osama", title: "Article Number Five" },
-          ],
-          source: "Tasho",
-        },
+        data: {},
       });
     </script>
   </body>
