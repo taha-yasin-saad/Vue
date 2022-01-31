@@ -14,21 +14,17 @@
     </div>
     <script src="js/vue.js"></script>
     <script>
-
-      // Global components
-      // component can be in cabab-case or PascalCase
-      Vue.component("AppArticle", {
+      // local components
+      var AppArticle = {
         data: function () {
           return {
             count: 0,
           };
         },
-        props: ["author", "title", "id"],
-
         template: "<p>Test</p>",
-      });
+      };
 
-      Vue.component("AppArticleItem", {
+      var AppArticleItem = {
         data: function () {
           return {
             count: 0,
@@ -37,11 +33,15 @@
         props: ["author", "title", "id"],
 
         template: "<p>Item</p>",
-      });
+      };
 
       var vm = new Vue({
         el: "#tasho-app",
         data: {},
+        components: {
+          "app-article": AppArticle,
+          "app-article-item": AppArticleItem,
+        },
       });
     </script>
   </body>
