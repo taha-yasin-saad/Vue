@@ -9,11 +9,11 @@
   <body>
     <div id="tasho-app">
       <h1>Welcome To Vue.Js Course</h1>
-      <p>{{ calcAge() }}</p>
-      <p>{{ calcAge() }}</p>
-      <p>{{ calcAge() }}</p>
-      <p>{{ calcAge() }}</p>
-      <p>{{ calcAge() }}</p>
+      <p>{{ calcAge }}</p>
+      <p>{{ calcAge }}</p>
+      <p>{{ calcAge }}</p>
+      <p>{{ calcAge }}</p>
+      <p>{{ calcAge }}</p>
       <p>{{ age }}</p>
     </div>
     <script src="js/vue.js"></script>
@@ -24,13 +24,13 @@
           age: 36,
           message: "Vue Js App",
         },
-        methods: {
+        methods: {},
+        computed: {
           calcAge: function () {
             console.log("Run");
             return this.age * 2;
           },
         },
-        computed: {},
       });
     </script>
   </body>
