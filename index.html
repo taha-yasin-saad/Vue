@@ -9,30 +9,29 @@
   <body>
     <div id="tasho-app">
       <h1>Welcome To Vue.Js Course</h1>
-      <label for="text"> Write Your Username : </label>
-      <input type="text" v-model="username" />
-      <p>{{ validateUsername }}</p>
+      <label>Egyption Pound</label>
+      <input type="text" v-model="eg" />
+      <label>Saudi Riyal</label>
+      <input type="text" v-model="sar" />
     </div>
     <script src="js/vue.js"></script>
     <script>
       var vm = new Vue({
         el: "#tasho-app",
         data: {
-          username: "",
+          eg: 0,
+          sar: 0,
         },
         methods: {},
-        computed: {
-          validateUsername: function () {
-            if (!this.username) {
-              return "Username Can't be Empty";
-            } else if (this.username.length < 8) {
-              console.log(this.username.length);
-              return "Username is Too Short";
-            } else if (!isNaN(this.username)) {
-              return "Username Can't Be Numbers Only";
-            } else {
-              return "Hello " + this.username + " Everything is Good .";
-            }
+        computed: {},
+        watch: {
+          eg: function (v) {
+            this.sar = v / 5;
+            console.log("eg run");
+          },
+          sar: function (v) {
+            this.eg = v * 5;
+            console.log("sar run");
           },
         },
       });
